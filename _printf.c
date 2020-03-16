@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 
 	va_start(list, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
-		return (0);
+		return (-1);
 	for (i = 0 ; format[i] != '\0' ; i++)
 	{
 		if (format[i] == '%' && format[i + 1] != '%')
@@ -53,6 +53,7 @@ int _printf(const char *format, ...)
 					break;
 				default:
 					_putchar(format[i]);
+					_putchar(format[i + 1]);
 					s++;
 			}
 			i++;
@@ -62,7 +63,6 @@ int _printf(const char *format, ...)
 		{
 			_putchar('%');
 			s++;
-			i++;
 		}
 		else
 		{
