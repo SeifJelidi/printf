@@ -13,7 +13,9 @@ int case_string(char *ch)
 {
 	int i;
 	int s = 0;
-
+	
+	if (ch == NULL)
+		ch = "(nil)";
 	for (i = 0 ; ch[i] != '\0' ; i++)
 	{
 		_putchar(ch[i]);
@@ -41,7 +43,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%' && format[i + 1] != '%')
 		{
-			switch (format[i])
+			switch (format[i + 1])
 			{
 				case 'c':
 					_putchar(va_arg(list, int));
