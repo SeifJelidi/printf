@@ -34,7 +34,6 @@ int _printf(const char *format, ...)
 {
 	va_list list;
 	int i, s = 0;
-	char *ch;
 
 	va_start(list, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
@@ -50,8 +49,7 @@ int _printf(const char *format, ...)
 					s++;
 					break;
 				case 's':
-					ch = va_arg(list, char*);
-					s += case_string(ch);
+					s += case_string(va_arg(list, char*));
 					break;
 				default:
 					_putchar(format[i + 1]);
