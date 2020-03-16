@@ -32,44 +32,38 @@ int case_string(char *ch)
  */
 int _printf(const char *format, ...)
 {
-	va_list list;
-	int i, s = 0;
+        va_list list;
+        int i, s = 0;
 
-	va_start(list, format);
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
-		return (-1);
-	for (i = 0 ; format[i] != '\0' ; i++)
-	{
-		if (format[i] == '%' && format[i + 1] != '%')
-		{
-			switch (format[i + 1])
-			{
-				case 'c':
-					_putchar(va_arg(list, int));
-					s++;
-					break;
-				case 's':
-					s += case_string(va_arg(list, char *));
-					break;
-				default:
-					_putchar(format[i]);
-					_putchar(format[i + 1]);
-					s++;
-			}
-			i++;
+        va_start(list, format);
+        if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+                return (-1);
+        for (i = 0 ; format[i] != '\0' ; i++)
+        {
+                if (format[i] == '%')
+                {
+                        switch (format[i + 1])
+                        {
+                                case 'c':
+                                        _putchar(va_arg(list, int));
+                                        s++;
+                                        break;
+                                case 's':
+                                        s += case_string(va_arg(list, char *));
+                                        break;
+                                case '%':
+                                        _putchar('%');
+                                        s++;
+                        }
+                        i++;
 
-		}
-		else if (format[i] == '%' && format[i + 1] == '%')
-		{
-			_putchar('%');
-			i++, s++;
-		}
-		else
-		{
-			_putchar(format[i]);
-			s++;
-		}
-	}
-	va_end(list);
-	return (s);
+                }
+                else
+                {
+                        _putchar(format[i]);
+                        s++;
+                }
+        }
+        va_end(list);
+        return (s);
 }
