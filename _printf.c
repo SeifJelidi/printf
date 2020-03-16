@@ -53,7 +53,6 @@ int _printf(const char *format, ...)
 					break;
 				default:
 					_putchar(format[i]);
-					_putchar(format[i + 1]);
 					s++;
 			}
 			i++;
