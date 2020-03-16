@@ -9,13 +9,11 @@
  * Return: length of a string
  */
 
-int case_string(va_list list)
+int case_string(char *ch)
 {
 	int i;
 	int s = 0;
-	char *ch;
 
-	ch = va_arg(list, char *);
 	if (ch == NULL)
 		ch = "(nil)";
 	for (i = 0 ; ch[i] != '\0' ; i++)
@@ -51,7 +49,7 @@ int _printf(const char *format, ...)
 					s++;
 					break;
 				case 's':
-					s += case_string(list);
+					s += case_string(va_arg(list, char *));
 					break;
 				default:
 					_putchar(format[i]);
