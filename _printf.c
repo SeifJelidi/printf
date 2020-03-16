@@ -36,13 +36,15 @@ int _printf(const char *format, ...)
 	int i, s = 0;
 
 	va_start(list, format);
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+	if (format == NULL)
 		return (-1);
 	for (i = 0 ; format[i] != '\0' && format ; i++)
 	{
 		if (format[i] == '%')
 		{
-			switch (format[i + 1])
+			i++;
+			for (; format[i] == ' ' ; i++);
+			switch (format[i])
 			{
 				case 'c':
 					_putchar(va_arg(list, int));
@@ -54,8 +56,9 @@ int _printf(const char *format, ...)
 				case '%':
 					_putchar('%');
 					s++;
+				case '\0':
+					return (-1);
 			}
-			i++;
 		}
 		else
 		{
