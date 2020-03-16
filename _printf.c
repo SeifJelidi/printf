@@ -52,7 +52,7 @@ int _printf(const char *format, ...)
 					s += case_string(va_arg(list, char*));
 					break;
 				default:
-					_putchar(format[i + 1]);
+					_putchar(format[i]);
 					s++;
 			}
 			i++;
