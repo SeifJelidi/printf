@@ -100,10 +100,10 @@ int case_binary(unsigned int n)
 }
 
 /**
- * case_binary - returns number of digits after converting to binary
- * Description: returns number of digits after converting to binary
- * @n: decimal number int
- * Return: number of digits after converting to binary
+ * case_r - returns length of string and print it  in reverse
+ * Description: returns length of string and print it in reverse
+ * @ch: character string
+ * Return: length of string
  */
 
 int case_r(char *ch)
@@ -112,5 +112,13 @@ int case_r(char *ch)
 
 	if (ch == NULL)
 		ch = "(nil)";
-	while
+	while (ch[i] != '\0')
+		i++;
+	i--;
+	for (; i >= 0; i--)
+	{
+		_putchar(ch[i]);
+		s++;
+	}
+	return (s);
 }
