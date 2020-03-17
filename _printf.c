@@ -36,6 +36,9 @@ int _printf(const char *format, ...)
 				case 'b':
 					s += case_binary(va_arg(list, unsigned int));
 					break;
+				case 'r':
+					s += case_r(va_arg(list, char *));
+					break;
 				default:
 					_putchar(format[i]), _putchar(format[i + 1]), s += 2;
 			} i++;
@@ -43,9 +46,7 @@ int _printf(const char *format, ...)
 		{
 			_putchar('%'), i++, s++;
 		} else
-		{
 			_putchar(format[i]), s++;
-		}
 	} va_end(list);
 	return (s);
 }

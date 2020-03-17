@@ -99,3 +99,18 @@ int case_binary(unsigned int n)
 	return (s);
 }
 
+/**
+ * case_binary - returns number of digits after converting to binary
+ * Description: returns number of digits after converting to binary
+ * @n: decimal number int
+ * Return: number of digits after converting to binary
+ */
+
+int case_r(char *ch)
+{
+	int i = 0, s = 0;
+
+	if (ch == NULL)
+		ch = "(nil)";
+	while
+}
