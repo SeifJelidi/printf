@@ -36,7 +36,7 @@ int _printf(const char *format, ...)
 					s += case_binary(va_arg(list, unsigned int));
 					break;
 				case 'r':
-					s+= print_rev(va_arg(list, char *));
+					s += print_rev(va_arg(list, char *));
 					break;
 				default:
 					_putchar(format[i]), _putchar(format[i + 1]), s++;
