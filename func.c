@@ -138,13 +138,13 @@ int case_R(char *ch)
 
 	if (ch == NULL)
 		ch = "(nil)";
-	for (i = 0; *(ch + i); i++)
+	for (i = 0; ch[i] != '\0'; i++)
 	{
 		for (j = 0; j < 52; j++)
 		{
-			if (a[j] == *(ch + i))
+			if (a[j] == ch[i])
 			{
-				*(ch + i) = b[j];
+				ch[i] = b[j];
 				break;
 			}
 		}
