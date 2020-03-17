@@ -99,3 +99,26 @@ int case_binary(unsigned int n)
 	return (s);
 }
 
+/**
+* case_r - returns length of string and print it  in reverse
+* Description: returns length of string and print it in reverse
+* @ch: character string
+* Return: length of string
+*/
+
+int case_r(char *ch)
+{
+int i = 0, s = 0;
+
+if (ch == NULL)
+ch = "(nil)";
+while (ch[i] != '\0')
+i++;
+i--;
+for (; i >= 0; i--)
+_putchar(ch[i]);
+s++;
+}
+return (s);
+}
+
