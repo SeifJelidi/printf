@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include "holberton.h"
-#include <stdio.h>
 #include <unistd.h>
 /**
  * case_string - returns length of a string
