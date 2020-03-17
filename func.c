@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include "holberton.h"
+#include <stdio.h>
 #include <unistd.h>
 /**
  * case_string - returns length of a string
@@ -71,4 +72,30 @@ int case_int(int n)
 	if (n < 0)
 		i++;
 	return (i);
+}
+
+/**
+ * case_binary - returns number of digits after converting to binary
+ * Description: returns number of digits after converting to binary
+ * @n: decimal number int
+ * Return: number of digits after converting to binary
+ */
+
+int case_binary(unsigned int n)
+{
+	int b[32];
+	int i = 0, s = 0, j;
+
+	while (n > 0)
+	{
+		b[i] = n % 2;
+		n = n / 2;
+		i++;
+	}
+	for (j = i - 1 ; j >= 0 ; j--)
+	{
+		_putchar(b[j] + '0');
+		s++;
+	}
+	return (s);
 }

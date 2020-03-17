@@ -6,5 +6,6 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 int case_string(char *ch);
 int case_int(int n);
+int case_binary(unsigned int n);
 
 #endif

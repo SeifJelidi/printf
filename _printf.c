@@ -32,16 +32,16 @@ int _printf(const char *format, ...)
 				case 'd':
 					s += case_int(va_arg(list, int));
 					break;
+				case 'b':
+					s += case_binary(va_arg(list, unsigned int));
+					break;
 				default:
-					_putchar(format[i]);
-					_putchar(format[i + 1]);
-					s++;
+					_putchar(format[i]), _putchar(format[i + 1]), s++;
 			}
 			i++;
 		} else if (format[i] == '%' && format[i + 1] == '%')
 		{
-			_putchar('%');
-			i++, s++;
+			_putchar('%'), i++, s++;
 		} else
 		{
 			_putchar(format[i]);
