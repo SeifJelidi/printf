@@ -29,6 +29,10 @@ int _printf(const char *format, ...)
 				case 's':
 					s += case_string(va_arg(list, char *));
 					break;
+				case 'i':
+				case 'd':
+					s += case_int(va_arg(list, int));
+					break;
 				default:
 					_putchar(format[i]);
 					_putchar(format[i + 1]);
