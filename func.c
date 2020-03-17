@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include "holberton.h"
-
+#include <unistd.h>
 /**
  * case_string - returns length of a string
  * Description: returns length of a string
@@ -15,7 +15,11 @@ int case_string(char *ch)
 	int s = 0;
 
 	if (ch == NULL)
-		ch = "(null)";
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+
 	for (i = 0 ; ch[i] != '\0' ; i++)
 	{
 		_putchar(ch[i]);
