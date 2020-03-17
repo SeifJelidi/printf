@@ -100,7 +100,7 @@ int case_binary(unsigned int n)
 }
 /**
  *print_rev - string in reverse
- *@s: input
+ *@r: input
  * Return: output.
  */
 void print_rev(char *r)
