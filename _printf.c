@@ -27,7 +27,8 @@ int _printf(const char *format, ...)
 				case 's':
 					s += case_string(va_arg(list, char *));
 					break;
-				case 'i':s += case_int(va_arg(list, int));
+				case 'i':
+					s += case_int(va_arg(list, int));
 					break;
 				case 'd':
 					s += case_int(va_arg(list, int));
