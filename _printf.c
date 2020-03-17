@@ -39,13 +39,15 @@ int _printf(const char *format, ...)
 				case 'r':
 					s += case_r(va_arg(list, char *));
 					break;
+				case 'R':
+					s += case_R(va_arg(list, char *));
+					break;
 				default:
 					_putchar(format[i]), _putchar(format[i + 1]), s += 2;
 			} i++;
 		} else if (format[i] == '%' && format[i + 1] == '%')
-		{
 			_putchar('%'), i++, s++;
-		} else
+		else
 			_putchar(format[i]), s++;
 	} va_end(list);
 	return (s);

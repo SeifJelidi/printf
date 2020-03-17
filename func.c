@@ -122,3 +122,35 @@ int case_r(char *ch)
 	}
 	return (s);
 }
+
+/**
+ * case_R - encodes rot13
+ * Description: encodes rot13
+ * @ch: character string
+ * Return: length of string encoded
+ */
+
+int case_R(char *ch)
+{
+	int i, j, s = 0;
+	char a[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char b[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+
+	for (i = 0; *(ch + i); i++)
+	{
+		for (j = 0; j < 52; j++)
+		{
+			if (a[j] == *(ch + i))
+			{
+				*(ch + i) = b[j];
+				break;
+			}
+		}
+	}
+	for (i = 0 ; ch[i] != '\0' ; i++)
+	{
+		_putchar(ch[i]);
+		s++;
+	}
+	return (s);
+}
