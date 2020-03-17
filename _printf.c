@@ -38,18 +38,15 @@ int _printf(const char *format, ...)
 					s++;
 			}
 			i++;
-		}
-		else if (format[i] == '%' && format[i + 1] == '%')
+		} else if (format[i] == '%' && format[i + 1] == '%')
 		{
 			_putchar('%');
 			i++, s++;
-		}
-		else
+		} else
 		{
 			_putchar(format[i]);
 			s++;
 		}
-	}
-	va_end(list);
+	} va_end(list);
 	return (s);
 }
