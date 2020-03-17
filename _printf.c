@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include "holberton.h"
-
 /**
  * _printf - produces output according to a format
  * Description: produces output according to a format
