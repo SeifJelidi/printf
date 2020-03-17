@@ -136,6 +136,8 @@ int case_R(char *ch)
 	char a[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char b[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
+	if (ch == NULL)
+		ch = "(nil)";
 	for (i = 0; *(ch + i); i++)
 	{
 		for (j = 0; j < 52; j++)
