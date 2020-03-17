@@ -116,5 +116,5 @@ for (; i >= 0; i--)
 {
 _putchar(r[i]);
 }
-_putchar('\n');
+return (i);
 }
