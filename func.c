@@ -98,3 +98,23 @@ int case_binary(unsigned int n)
 	}
 	return (s);
 }
+/**
+ *print_rev - string in reverse
+ *@s: input
+ * Return: output.
+ */
+void print_rev(char *r)
+
+{
+int i = 0;
+while (r[i] != '\0')
+{
+i++;
+}
+i--;
+for (; i >= 0; i--)
+{
+_putchar(r[i]);
+}
+_putchar('\n');
+}
