@@ -15,7 +15,7 @@ int case_string(char *ch)
 	int s = 0;
 
 	if (ch == NULL)
-		ch = "(nil)";
+		ch = "(null)";
 	for (i = 0 ; ch[i] != '\0' ; i++)
 	{
 		_putchar(ch[i]);
