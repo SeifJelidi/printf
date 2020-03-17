@@ -22,8 +22,7 @@ int _printf(const char *format, ...)
 			switch (format[i + 1])
 			{
 				case 'c':
-					_putchar(va_arg(list, int));
-					s++;
+					_putchar(va_arg(list, int)), s++;
 					break;
 				case 's':
 					s += case_string(va_arg(list, char *));
@@ -35,17 +34,18 @@ int _printf(const char *format, ...)
 				case 'b':
 					s += case_binary(va_arg(list, unsigned int));
 					break;
+				case 'r':
+					s += case_r(va_arg(list, char *));
+					break;
 				default:
 					_putchar(format[i]), _putchar(format[i + 1]), s++;
-			}
-			i++;
+			} i++;
 		} else if (format[i] == '%' && format[i + 1] == '%')
 		{
 			_putchar('%'), i++, s++;
 		} else
 		{
-			_putchar(format[i]);
-			s++;
+			_putchar(format[i]), s++;
 		}
 	} va_end(list);
 	return (s);
